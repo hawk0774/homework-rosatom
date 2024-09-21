@@ -32,6 +32,13 @@ spec:
               containerPort: 8080
             - name: jnlpport
               containerPort: 50000
+          env:
+          - name: POSTGRES_DB
+            value: "jenkins"
+          - name: POSTGRES_USER
+            value: "jenkins"
+          - name: POSTGRES_PASSWORD
+            value: "jenkins"
           livenessProbe:
             httpGet:
               path: "/login"
